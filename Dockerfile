@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM debian:7.8
 ADD ./scripts /scripts
 RUN /scripts/bootstrap
 
