@@ -2,9 +2,9 @@ FROM debian:jessie
 ADD ./scripts /scripts
 RUN /scripts/bootstrap
 
-ENV RANCHEROS_VERSION v0.3.3
+ENV RANCHEROS_VERSION v0.3.4-dev
 
-ADD https://github.com/rancherio/os/releases/download/${RANCHEROS_VERSION}/vmlinuz /dist/vmlinuz
-ADD https://github.com/rancherio/os/releases/download/${RANCHEROS_VERSION}/initrd /dist/initrd
+ADD tmp/vmlinuz /dist/vmlinuz
+ADD tmp/initrd /dist/initrd
 
 ENTRYPOINT ["/scripts/lay-down-os"]
